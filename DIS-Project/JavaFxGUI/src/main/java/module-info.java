@@ -11,5 +11,6 @@ module com.example.gui {
     requires com.fasterxml.jackson.databind;
 
     // Erlaube FXML-Loader Reflective-Zugriff auf deinen Controller
-    opens com.example.gui to javafx.graphics, javafx.fxml;
+    opens com.example.gui
+            to javafx.graphics, javafx.fxml, com.fasterxml.jackson.databind;
 }
