@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS usage_table (
+hour TIMESTAMP NOT NULL PRIMARY KEY,
+community_produced DOUBLE PRECISION,
+community_used DOUBLE PRECISION,
+grid_used DOUBLE PRECISION
+);
+
+CREATE TABLE IF NOT EXISTS percentage_table (
+id SERIAL PRIMARY KEY,
+hour TIMESTAMP,
+community_depleted DOUBLE PRECISION,
+grid_portion DOUBLE PRECISION
+);
