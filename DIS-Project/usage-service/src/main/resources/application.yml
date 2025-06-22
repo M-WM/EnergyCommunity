@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/energydb
-    username: energy
-    password: secret
+    url: jdbc:postgresql://localhost:5432/
+    username: disysuser
+    password: disyspw
   jpa:
     hibernate:
       ddl-auto: none
