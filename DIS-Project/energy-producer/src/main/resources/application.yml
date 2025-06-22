@@ -1,0 +1,10 @@
+spring:
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:rabbitmq}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+
+weather:
+  api:
+    key: ${WEATHER_API_KEY:DEIN_API_KEY}
+    url: https://api.openweathermap.org/data/2.5/weather
+    location: ${WEATHER_LOCATION:Berlin,DE}
