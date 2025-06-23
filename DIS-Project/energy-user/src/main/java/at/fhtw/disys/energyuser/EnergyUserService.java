@@ -20,8 +20,8 @@ public class EnergyUserService {
 
     public EnergyUserService(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
-        this.objectMapper    = new ObjectMapper()
-                .registerModule(new JavaTimeModule());
+        this.objectMapper = new ObjectMapper();
+        this.objectMapper.registerModule(new JavaTimeModule());
     }
 
     /**
@@ -44,15 +44,11 @@ public class EnergyUserService {
             base *= 2.5;
         }
 
-        EnergyUsageMessage msg = new EnergyUsageMessage(base, now);
+        EnergyUsageMessage message = new EnergyUsageMessage(base, now);
 
         try {
-            String json = objectMapper.writeValueAsString(msg);
-            rabbitTemplate.convertAndSend(
-                    RabbitConfig.EXCHANGE_NAME,
-                    RabbitConfig.ROUTING_KEY,
-                    json
-            );
+            String json = objectMapper.writeValueAsString(message);
+            rabbitTemplate.convertAndSend("energy.exchange", "energy.routing", json);
             System.out.println("Sent USER: " + json);
         } catch (Exception e) {
             e.printStackTrace();

@@ -7,25 +7,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
-    public static final String EXCHANGE_NAME = "energy.exchange";
-    public static final String ROUTING_KEY   = "energy.usage";
-    public static final String QUEUE_NAME    = "usage.queue";
-
     @Bean
-    public DirectExchange energyExchange() {
-        return new DirectExchange(EXCHANGE_NAME);
+    public DirectExchange exchange() {
+        return new DirectExchange("energy.exchange");
     }
 
     @Bean
-    public Queue usageQueue() {
-        return QueueBuilder.durable(QUEUE_NAME).build();
+    public Queue queue() {
+        return new Queue("energy.queue");
     }
 
     @Bean
-    public Binding binding(Queue usageQueue, DirectExchange energyExchange) {
-        return BindingBuilder
-                .bind(usageQueue)
-                .to(energyExchange)
-                .with(ROUTING_KEY);
+    public Binding binding(Queue queue, DirectExchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with("energy.routing");
     }
 }
