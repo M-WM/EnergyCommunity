@@ -1,6 +1,6 @@
 package org.example.energyuser;
 
-import org.example.config.RabbitConfig;
+import org.example.energyuser.config.RabbitConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
