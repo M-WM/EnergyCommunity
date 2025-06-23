@@ -1,4 +1,4 @@
-package com.example.energy.model;
+package at.fhtw.disys.model;
 
 public class CurrentData {
     private String hour;

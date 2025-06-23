@@ -1,4 +1,4 @@
-package com.example.gui;
+package at.fhtw.disys;
 
 import javafx.beans.property.*;
 

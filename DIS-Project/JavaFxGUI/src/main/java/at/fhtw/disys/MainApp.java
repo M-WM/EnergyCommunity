@@ -1,4 +1,4 @@
-package com.example.gui;
+package at.fhtw.disys;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

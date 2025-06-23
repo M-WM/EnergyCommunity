@@ -1,4 +1,6 @@
-package com.example.energy.model;
+package at.fhtw.disys.model;
+
+import java.time.LocalDateTime;
 
 public class HistoricalData {
     private String hour;

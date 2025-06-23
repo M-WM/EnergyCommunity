@@ -8,7 +8,7 @@
     <version>3.4.4</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>technikum</groupId>
+  <groupId>at.fhtw.disys</groupId>
   <artifactId>RestAPI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>RestAPI</name>
@@ -39,6 +39,28 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+    <!-- JPA & PostgreSQL -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- Jackson Java8 Date/Time -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>at.fhtw.disys</groupId>
+      <artifactId>usage-service</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 

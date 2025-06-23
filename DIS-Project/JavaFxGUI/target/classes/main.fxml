@@ -6,7 +6,9 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:controller="com.example.gui.MainController"
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Spinner?>
+<Pane fx:controller="at.fhtw.disys.MainController"
       prefHeight="300.0" prefWidth="360.0"
       xmlns="http://javafx.com/javafx/20"
       xmlns:fx="http://javafx.com/fxml/1">
@@ -32,10 +34,17 @@
 
         <!-- Zeitbereich -->
         <Label layoutX="14.0"  layoutY="123.0" text="Start" />
-        <DatePicker fx:id="startDatePicker" layoutX="80.0" layoutY="119.0"/>
+        <HBox spacing="5" layoutX="80.0" layoutY="119.0">
+            <DatePicker fx:id="startDatePicker"/>
+            <Spinner fx:id="startHourSpinner" prefWidth="60.0"/>
+        </HBox>
 
         <Label layoutX="14.0"  layoutY="153.0" text="End" />
-        <DatePicker fx:id="endDatePicker"   layoutX="80.0" layoutY="149.0"/>
+        <HBox spacing="5" layoutX="80.0" layoutY="149.0">
+            <DatePicker fx:id="endDatePicker"/>
+            <Spinner fx:id="endHourSpinner" prefWidth="60.0"/>
+        </HBox>
+
 
         <Button fx:id="showDataButton" layoutX="14.0" layoutY="183.0" text="Show Data" />
 
@@ -44,12 +53,12 @@
 
         <!-- Historische Daten Labels -->
         <Label layoutX="14.0" layoutY="225.0" text="Community produced" />
-        <Label fx:id="histProdLabel"  layoutX="155.0" layoutY="225.0" text="–" />
+        <Label fx:id="comProdTotalLabel"  layoutX="155.0" layoutY="225.0" text="–" />
 
         <Label layoutX="14.0" layoutY="245.0" text="Community used" />
-        <Label fx:id="histUsedLabel"  layoutX="155.0" layoutY="245.0" text="–" />
+        <Label fx:id="comUsedTotalLabel"  layoutX="155.0" layoutY="245.0" text="–" />
 
         <Label layoutX="14.0" layoutY="265.0" text="Grid used" />
-        <Label fx:id="histGridLabel"  layoutX="155.0" layoutY="265.0" text="–" />
+        <Label fx:id="gridTotalLabel"  layoutX="155.0" layoutY="265.0" text="–" />
     </children>
 </Pane>
