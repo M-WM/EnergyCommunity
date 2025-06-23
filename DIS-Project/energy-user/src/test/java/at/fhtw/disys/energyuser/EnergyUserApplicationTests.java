@@ -1,4 +1,4 @@
-package org.example.energyuser;
+package at.fhtw.disys.energyuser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
