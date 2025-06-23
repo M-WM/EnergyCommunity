@@ -3,8 +3,8 @@ package at.fhtw.disys.usageservice.dto;
 import java.time.LocalDateTime;
 
 public class EnergyMessage {
-    private String type;         // PRODUCER | USER
-    private String association;  // COMMUNITY
+    private String type; // "PRODUCER" or "USER"
+    private String association; // "COMMUNITY"
     private double kwh;
     private LocalDateTime datetime;
 

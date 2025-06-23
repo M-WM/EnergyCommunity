@@ -38,6 +38,7 @@ public class UserService {
                 "usage",
                 msg
         );
+        System.out.println("Sent: kwH: " + kwh + " time: " + LocalDateTime.now());
     }
 
     public static record EnergyMessage(

@@ -1,10 +1,10 @@
-package org.example.energyproducer;
+package at.fhtw.disys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication(scanBasePackages = "org.example")
+@SpringBootApplication
 @EnableScheduling
 public class EnergyProducerApplication {
 	public static void main(String[] args) {

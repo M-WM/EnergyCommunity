@@ -5,7 +5,7 @@ spring:
     password: disyspw
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
   flyway:
     enabled: true
@@ -15,3 +15,6 @@ spring:
     port: 5672
     username: guest
     password: guest
+logging:
+    level:
+      org.hibernate.SQL: DEBUG

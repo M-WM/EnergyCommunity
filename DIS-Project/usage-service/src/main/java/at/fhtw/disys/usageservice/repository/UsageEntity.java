@@ -20,6 +20,13 @@ public class UsageEntity {
     @Column(name = "grid_used")
     private double gridUsed;
 
+    public UsageEntity() {
+    }
+
+    public UsageEntity(LocalDateTime hour) {
+        this.hour = hour;
+    }
+
     // Getter/Setter
     public LocalDateTime getHour() {
         return hour;

@@ -1,13 +1,13 @@
-package org.example.energyproducer;
+package at.fhtw.disys.usageservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EnergyProducerApplicationTests {
+class UsageServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
