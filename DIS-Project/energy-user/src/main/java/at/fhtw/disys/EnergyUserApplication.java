@@ -1,4 +1,4 @@
-package at.fhtw.disys.energyuser;
+package at.fhtw.disys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
