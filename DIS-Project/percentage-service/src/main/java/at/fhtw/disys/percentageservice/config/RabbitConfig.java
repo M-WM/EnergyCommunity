@@ -7,8 +7,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
+    // Name des zentralen Exchanges (muss mit Usage-Service übereinstimmen)
     public static final String EXCHANGE = "energy.exchange";
-    public static final String PERCENT_QUEUE = "percent.queue";
+
+    // Queue, auf die der Percentage-Service horcht
+    public static final String PERCENTAGE_QUEUE = "percentage.queue";
+
+    // Routing Key für Update-Events
+    public static final String UPDATE_ROUTING_KEY = "update";
 
     @Bean
     public DirectExchange energyExchange() {
@@ -16,14 +22,15 @@ public class RabbitConfig {
     }
 
     @Bean
-    public Queue percentQueue() {
-        return QueueBuilder.durable(PERCENT_QUEUE).build();
+    public Queue percentageQueue() {
+        return QueueBuilder.durable(PERCENTAGE_QUEUE).build();
     }
 
     @Bean
-    public Binding percentBinding(Queue percentQueue, DirectExchange energyExchange) {
-        return BindingBuilder.bind(percentQueue)
-                .to(energyExchange)
-                .with("percent");
+    public Binding bindPercentage() {
+        return BindingBuilder
+                .bind(percentageQueue())
+                .to(energyExchange())
+                .with(UPDATE_ROUTING_KEY);
     }
 }
