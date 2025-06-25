@@ -1,0 +1,12 @@
+spring:
+  # Datenbank-Verbindung
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username: disysuser
+    password: disyspw
+
+  # JPA (nur Lesebetrieb, keine DDL-Automatik nötig)
+  jpa:
+    hibernate:
+      ddl-auto: validate # 'validate' stellt sicher, dass das Schema passt
+    show-sql: false
