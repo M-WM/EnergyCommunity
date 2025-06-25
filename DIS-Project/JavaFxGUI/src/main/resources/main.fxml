@@ -8,7 +8,8 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Spinner?>
-<Pane fx:controller="at.fhtw.disys.MainController"
+
+<Pane fx:controller="at.fhtw.disys.controller.MainController"
       prefHeight="300.0" prefWidth="360.0"
       xmlns="http://javafx.com/javafx/20"
       xmlns:fx="http://javafx.com/fxml/1">
@@ -36,15 +37,14 @@
         <Label layoutX="14.0"  layoutY="123.0" text="Start" />
         <HBox spacing="5" layoutX="80.0" layoutY="119.0">
             <DatePicker fx:id="startDatePicker"/>
-            <Spinner fx:id="startHourSpinner" prefWidth="60.0"/>
+            <Spinner fx:id="startHourSpinner" prefWidth="80.0"/>
         </HBox>
 
         <Label layoutX="14.0"  layoutY="153.0" text="End" />
         <HBox spacing="5" layoutX="80.0" layoutY="149.0">
             <DatePicker fx:id="endDatePicker"/>
-            <Spinner fx:id="endHourSpinner" prefWidth="60.0"/>
+            <Spinner fx:id="endHourSpinner" prefWidth="80.0"/>
         </HBox>
-
 
         <Button fx:id="showDataButton" layoutX="14.0" layoutY="183.0" text="Show Data" />
 
