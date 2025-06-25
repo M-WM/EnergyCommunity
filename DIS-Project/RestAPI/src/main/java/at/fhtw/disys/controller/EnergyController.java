@@ -1,5 +1,6 @@
 package at.fhtw.disys.controller;
 
+import at.fhtw.disys.dto.HistoricalTotalsDto;
 import at.fhtw.disys.entity.CurrentPercentage;
 import at.fhtw.disys.entity.Usage;
 import at.fhtw.disys.repository.CurrentPercentageRepository;
@@ -40,7 +41,7 @@ public class EnergyController {
 
     /** Historische Daten nach Stunden-Filter */
     @GetMapping("/historical")
-    public List<Usage> getHistorical(
+    public HistoricalTotalsDto getHistorical(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
             LocalDateTime start,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
@@ -49,6 +50,15 @@ public class EnergyController {
         LocalDateTime from = start.truncatedTo(ChronoUnit.HOURS);
         LocalDateTime to   = end.truncatedTo(ChronoUnit.HOURS);
 
-        return usageRepo.findAllByHourBetweenOrderByHour(from, to);
+        List<Usage> usages = usageRepo.findAllByHourBetweenOrderByHour(from, to);
+
+        double sumProd = usages.stream()
+                .mapToDouble(Usage::getCommunityProduced).sum();
+        double sumUsed = usages.stream()
+                .mapToDouble(Usage::getCommunityUsed).sum();
+        double sumGrid = usages.stream()
+                .mapToDouble(Usage::getGridUsed).sum();
+
+        return new HistoricalTotalsDto(sumProd, sumUsed, sumGrid);
     }
 }
