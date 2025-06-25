@@ -53,7 +53,3 @@ This ensures clear separation of concerns and fault isolation.
 
 The full development history, including commits and change logs, can be reviewed directly in the project's Git repository. It demonstrates iterative improvements, bug fixes and refactoring towards the final architecture.
 [Link zum Repository](https://github.com/M-WM/EnergyCommunity)
-
----
-
-_End of Documentation_
